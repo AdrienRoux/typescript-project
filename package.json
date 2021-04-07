@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node models/pokemon.ts",
-    "test": "jest"
+    "test": "jest",
+    "bundle": "npm run build && npm run start"
   },
   "author": "",
   "license": "ISC",
