@@ -17,5 +17,4 @@ export class Attack implements AttackProps{
         this.damage = props.damage;
         this.types = props.types;
     }
-
 }

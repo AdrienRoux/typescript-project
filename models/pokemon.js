@@ -8,8 +8,25 @@ var Pokemon = /** @class */ (function () {
         this.hp = props.hp;
         this.attacks = props.attacks;
     }
-    Pokemon.prototype.test = function () {
-        return true;
+    Pokemon.prototype.attack = function (attack, pok) {
+        pok.hp -= attack.damage;
+    };
+    Pokemon.prototype.getRandomAttack = function () {
+        var chosen = Math.random() * this.attacks.length;
+        return this.attacks[chosen];
+    };
+    Pokemon.prototype.getAttack = function (param) {
+        if (typeof param == "string") {
+            for (var i = 0; i < this.attacks.length; i++) {
+                if (this.attacks[i].name === param) {
+                    return this.attacks[i];
+                }
+            }
+        }
+        if (typeof param == "number") {
+            return this.attacks[param];
+        }
+        return this.attacks[0];
     };
     return Pokemon;
 }());
