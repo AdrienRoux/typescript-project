@@ -1,5 +1,5 @@
 import {Pokemon} from "../models/pokemon";
-import {fight} from "../fight";
+import {attacksFirst} from "../attacksFirst";
 
 const pokemon = new Pokemon("Test", 0);
 
@@ -20,12 +20,12 @@ describe('Test parametres Pokemons', () => {
 
 describe('Test fight', () => {
     it('Should return Pikachu', () => {
-        expect(fight(pikachu,salameche)).toBe(pikachu);
+        expect(attacksFirst(pikachu,salameche)).toBe(pikachu);
     });
 
     it('Should return Salameche', () =>{
         salameche.speed = 25;
-        expect(fight(pikachu,salameche)).toBe(salameche);
+        expect(attacksFirst(pikachu,salameche)).toBe(salameche);
     })
 });
 
