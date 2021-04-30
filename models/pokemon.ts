@@ -25,6 +25,13 @@ export class Pokemon implements PokemonProps{
         pok.hp -= attack.damage;
     }
 
+    roundAttack(attack: Attack, pok: Pokemon) {
+        setTimeout(() => {
+            console.log(this.name + " attack " + attack.name)
+            pok.hp -= attack.damage;
+        }, 2000)
+    }
+
     getRandomAttack(): Attack{
         let chosen = Math.random() * this.attacks.length;
         return this.attacks[chosen];

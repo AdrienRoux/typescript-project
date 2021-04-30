@@ -11,6 +11,13 @@ var Pokemon = /** @class */ (function () {
     Pokemon.prototype.attack = function (attack, pok) {
         pok.hp -= attack.damage;
     };
+    Pokemon.prototype.roundAttack = function (attack, pok) {
+        var _this = this;
+        setTimeout(function () {
+            console.log(_this.name + " attack " + attack.name);
+            pok.hp -= attack.damage;
+        }, 2000);
+    };
     Pokemon.prototype.getRandomAttack = function () {
         var chosen = Math.random() * this.attacks.length;
         return this.attacks[chosen];

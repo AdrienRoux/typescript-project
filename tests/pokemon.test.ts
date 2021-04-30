@@ -1,5 +1,5 @@
 import {Pokemon} from "../models/pokemon";
-import {attacksFirst, fight} from "../battle";
+import {attacksFirst, fight, round} from "../battle";
 import {bolt, ember} from "../constants/attacks";
 
 
@@ -50,3 +50,12 @@ describe('Test battle', () => {
         expect(fight(pikachu, salameche)).toBe(salameche);
     })
 });
+
+describe('Test Pokemon Battle', () => {
+    it('Should return Salameche',() => {
+        round(pikachu, salameche).then(value=> {
+            expect(value).toBe(salameche);
+        })
+
+    })
+})
